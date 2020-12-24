@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block step1 %}
+    selected-step
+{% endblock step1 %}
+
+{% block title %}
+    Eligibility
+{% endblock title %}
+
+{% block content %}
+
+    <form action="{% url 'application:form' %}" method="POST" class="bg-light mx-auto p-3" style="width: 68%">
+        {% csrf_token %}
+        <legend class="text-center my-3 " style="color: #a8352e;font-weight: 700">Check your Eligibility</legend>
+        <br>
+        <div class="d-flex justify-content-around " >
+            <input type="text" required name="first_name" style="width: 40%" class="form-control" placeholder="First Name">
+            <input type="text" required name="last_name" class="form-control" style="width: 40%" placeholder="Last Name">
+        </div>
+        <div class="d-flex justify-content-around my-3">
+            <input name="email" required type="email" placeholder="Email" style="width: 40%" class="form-control">
+            <select name="country" style="width: 40%" class="form-control" id="" required>
+                <option value="">Select Country</option>
+                {% for i in country %}
+                    <option value="{{ i.country_name }}">{{ i.country_name }}, {{ i.country_code }}</option>
+
+                {% endfor %}
+            </select>
+        </div>
+        <div class="d-flex justify-content-around ">
+            <input type="text" name="phone_number" style="width: 40%" class="form-control" required pattern="[0-9]+" placeholder="Phone Number">
+            <select name="birth_country" style="width: 40%" class="form-control" id="" required>
+                <option value="">Select Country</option>
+                {% for i in country %}
+                    <option value="{{ i.country_name }}">{{ i.country_name }}, {{ i.country_code }}</option>
+
+                {% endfor %}
+            </select>
+
+        </div>
+        <div class="d-flex justify-content-around my-3">
+            <input type="number" style="width: 40%" class="form-control" name="age" placeholder="Age" required >
+            <select name="martial_status" style="width: 40%" class="form-control" id="" required>
+                <option value="">Select your martial status</option>
+                <option value="Common-law-marriage">Common-law-marriage</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Legally separated">Legally separated</option>
+                <option value="Married">Married</option>
+                <option value="Single">Single</option>
+                <option value="Widowed">Widowed</option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-around ">
+            <select style="width: 40%" class="form-control" name="english_level" id="english_level" required>
+                <option value="">Speaking English Level</option>
+                <option value="No English">No English</option>
+                <option value="Basic">Basic</option>
+                <option value="Medium">Medium</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Proficient">Proficient</option>
+            </select>
+            <select style="width: 40%" class="form-control" id="education_level" name="education_level" required>
+                <option value="">Education Level</option>
+                <option value="Primary school only">Primary school only</option>
+                <option value="High School Degree">High School Degree</option>
+                <option value="Vocational School">Vocational School</option>
+                <option value="University Degree">University Degree</option>
+                <option value="Master Degree">Master Degree</option>
+                <option value="Doctorate Degree">Doctorate Degree</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-around my-3">
+            <select style="width: 40%" class="form-control" name="been_in_canada" id="been_in_canada" required>
+                <option value="">Have you been in Canada?</option>
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+            </select>
+            <select  style="width: 40%" class="form-control" id="monthly_income" name="monthly_income">
+                <option value="">Monthly income in Pakistan Rupee</option>
+                <option value="$0-1,200">₨ 0-₨100000</option>
+                <option value="$1,200-2,000">₨100000-₨300000</option>
+                <option value="$2,000-3,000">₨300000-₨400000</option>
+                <option value="$3,000-5,000">₨400000-₨800000</option>
+                <option value="$5,000-8,000">₨800000-₨1200000</option>
+                <option value="$8,000-15,000">₨1200000-₨2400000</option>
+                <option value="$15,000+">₨2400000+</option>
+            </select>
+
+        </div>
+        <div class="d-flex justify-content-around ">
+            <select  style="width: 40%" class="form-control" name="visa" id="visa" required>
+                <option value="">Which visa are you interested</option>
+                <option value="Permanent Residency Visa">Permanent Residency Visa</option>
+                <option value="Work Visa">Work Visa</option>
+                <option value="Student Visa">Student Visa</option>
+                <option value="Working Holiday (IEC)">Working Holiday (IEC)</option>
+                <option value="Tourist">Tourist</option>
+            </select>
+            <label style="width: 40%" >
+                <input class="input" type="checkbox" value="1" required="true" aria-invalid="false"
+                        checked="checked"><span> &nbsp; Yes, I agree to the
+                <a href="/terms-of-service" target="_blank">Terms of Service </a>
+                and
+                <a href="/privacy-policy" target="_blank">Privacy Policy
+                </a>and would like to receive my login details on Email.</span></label>
+
+        </div>
+        <div class="d-flex justify-content-center">
+            <br>
+            <button
+                
+                    style="background-color: #a8352e;
+                    color: white;font-size: x-large" class="btn my-3">
+                Check now</button>
+
+        </div>
+
+    </form>
+
+{% endblock content %}

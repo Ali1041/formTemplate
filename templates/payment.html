@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activation</title>
+
+      <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+      <!-- <script src="{% static 'matrix/test/utils.js' %}"></script> -->
+      <link rel="stylesheet" href="{% static 'admin/css/payment.css' %}">   
+      <script src="https://js.stripe.com/v3/"></script>
+      <link rel="icon" href="{% static 'assets/img/logo.png' %}">
+   
+
+</head>
+
+
+<body style="padding: 0px;">
+
+  </div>
+
+    <div class="myCard" style="margin-top: 100px;">
+      <!-- <a href="index">
+        <img src="{% static 'assets/img/logo.png' %}" alt="" style="width: 100px; margin: 0px;">
+      </a> -->
+      
+      <!-- <div class="row myCard" style="margin:10px 0px; text-align:left; padding: 10px 25px;">
+        <div class="column">
+          <h3>Product</h3>
+          <h3 style="color: grey;">{{order.which_product.title}}</h3>
+        </div>
+
+        <div class="column" style="text-align:right;">
+          <h3>Price</h3>
+          <h3 style="color: grey;">$ 49</h3>
+        </div>
+      
+      </div> -->
+      <img src="{% static 'admin/img/main-logo.jpeg' %}" class="my-4" style="width: 150px;" alt="">
+      <h2 style="color: #595959;">Payment Information</h2>
+      <hr style="border-top: 1px solid #cccccc; border-bottom: none; margin-top: 30px;">
+      <form action="{% url 'charge' %}" method="post" id="payment-form">
+        
+        {% csrf_token %}
+        
+
+        <div class="form-row" style="margin-top: 15px;">
+            <div style="display: inline-block; width: 100%;">
+                <h3 style="color: #a8352e; float: left;">Credit or debit card</h3>
+                <h3 style="color: grey; float: right;">$ 49</h3>
+            </div>
+
+            <div id="card-element" style="border: solid 1px #cccccc; margin-top: 0px;">
+            <!-- A Stripe Element will be inserted here. -->
+            </div>
+
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert" style="color: #d9534f; text-align: left; margin-top: 10px;"></div>
+        </div>
+
+        <button class="paymentBtn" style="background-color: #a8352e; border: solid 1px #a8352e;">Submit Payment</button>
+      </form>
+
+      <img src="{% static 'img/payment-methods.png' %}" style="width: 70%; margin-top: 25px;" alt="">
+    </div>
+
+
+</body>
+
+<script src="{% static 'js/payment.js' %}"></script>
+
+</html>
+
+
+
+ 

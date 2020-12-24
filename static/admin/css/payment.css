@@ -1,0 +1,72 @@
+      /**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+ .myCard{
+    border: solid 1px #cccccc; 
+    border-radius: 5px; 
+    padding: 30px; 
+    text-align: center;
+    max-width:500px; margin:30px auto
+  }
+  
+  body{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .StripeElement {
+  box-sizing: border-box;
+  
+  height: 40px;
+  
+  padding: 10px 12px;
+  
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+  
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  
+  }
+  
+  .column {
+  float: left;
+  width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+  
+  .StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+  
+  .StripeElement--invalid {
+  border-color: #fa755a;
+  }
+  
+  .paymentBtn{
+  width: 100%; 
+  margin-top: 10px; 
+  background-color: #0275d8; color: white; 
+  height: 40px; 
+  font-size: 18px; 
+  border: solid 1px #0275d8;
+  border-radius: 5px; 
+  cursor: pointer;
+  animation-duration: 0.25s;
+  }
+  
+  .paymentBtn:hover{
+  background-color: #0275f9;
+  animation-duration: 0.25s;
+  }
+  
+  .StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;}
