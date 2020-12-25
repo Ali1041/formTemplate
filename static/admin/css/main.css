@@ -1,0 +1,40 @@
+#bg{
+    width: 100%;
+    padding: 0px;
+    height: 153px;
+    background: url("../img/bg.PNG");
+    color: white;
+    background-repeat: repeat-x;
+}
+#santa{
+    background: url("../img/santa.PNG") no-repeat left;
+    background-size:contain ;
+}
+
+.b-t{
+    height: 5px;
+    width: 100%;
+}
+
+.step{
+    font-size: 50px;
+    text-align: center;
+}
+
+.step h1{
+    font-size: 50px;
+    text-align: center;
+    color: #7c7c7c
+}
+
+.step .b-t{
+    background-color: #7c7c7c;
+}
+
+.selected-step h1{
+    color: #a8352e;
+}
+
+.selected-step .b-t{
+    background-color: #a8352e;
+}

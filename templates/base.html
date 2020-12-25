@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Form</title>
+            <script src="https://kit.fontawesome.com/359826513d.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{% static 'admin/css/main.css' %}">
+    </head>
+
+    <body>
+
+        {#   The top black bar     #}
+        <div class="text-center" style="color: white;background-color: black" >
+            <div class="d-flex justify-content-end" style="width: 60%;margin: auto">
+                <p class="m-0 align-self-center p-1" style="font-size: 17px">
+                    <img style="height: 20px" src="{% static 'admin/img/phone.PNG' %}" alt="">+8798798550</p>
+            <p class="m-0 ml-2 align-self-center p-1" style="font-size: 17px">
+                <img style="height: 20px" src="{% static 'admin/img/mail.PNG' %}" alt="">canandaivs@gmail.com</p>
+            </div>
+        </div>
+
+
+        {#    The white background div    #}
+        <div class="text-center p-3">
+            <h2 style="font-weight: 700">IMMIGRATE TO CANADA IN 3 EASY STEPS</h2>
+        </div>
+
+        {#   The image background div     #}
+       
+        <div class="container-fluid" style="margin: 0px; padding: 0px; background-color: #ad1c14;">
+            <div class="text-center d-flex justify-content-center" id="bg">
+                <div class="align-self-center">
+                    <h3>Fill the details below to make sure you meet the canadian government requirements</h3>
+                <h1 style="font-weight: 700" >Good Luck!</h1>
+                </div>
+            </div>
+        </div>
+
+    
+        
+
+        {#   Div with Santa in the background     #}
+        <div class="p-3">
+            <div id="santa" style="width: 60%;margin: auto" class="d-flex justify-content-around p-3">
+            <div class="align-self-center d-flex">
+                <div class="step {% block step1 %}{% endblock step1 %}">
+                    <h1>1</h1>
+                    <h5 >Eligibility</h5>
+                    <div class="b-t"></div>
+                </div>
+                <i class="fas fa-chevron-right align-self-center"
+                   style="position:relative;left: 50%;font-size: 25px;color: #7c7c7c" ></i>
+            </div>
+            <div class="align-self-center d-flex">
+                <div class="step {% block step2 %}{% endblock step2 %}">
+                    <h1>2</h1>
+                    <h5 >Activation</h5>
+                    <div class="b-t"></div>
+                </div>
+                <i class="fas fa-chevron-right align-self-center"
+                   style="position:relative;left: 50%;font-size: 25px;color: #7c7c7c" ></i>
+
+            </div>
+            <div class="align-self-center">
+                <div class="step {% block step3 %}{% endblock step3 %}">
+                    <h1>3</h1>
+                    <h5 >Registration</h5>
+                    <div class="b-t"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        {#    The form div    #}
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        <br>
+        <br>
+
+
+        {#  The footer  #}
+        <div style="background-color: #0e0e0e;color: white" class="p-3">
+            <div class="container">
+                <p>Canada IVS works only with Regulated Canadian Immigration Consultants (RCIC) who are members and in good standing with the Immigration Consultants of Canada Regulatory Council (ICCRC)</p>
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <p>Term of service</p>
+                        <p>Privacy policy</p>
+                    </div>
+
+                    <img src="{% static 'admin/img/new.PNG' %}" style="width: 150px;height: 70px" alt="">
+
+                  
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
